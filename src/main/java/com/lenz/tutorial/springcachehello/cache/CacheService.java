@@ -1,5 +1,6 @@
-package com.lenz.tutorial.springcachehello;
+package com.lenz.tutorial.springcachehello.cache;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
@@ -15,6 +16,7 @@ public class CacheService {
 
     private Dao dao;
 
+    @Autowired
     public CacheService(Dao dao) {
         this.dao = dao;
     }
@@ -24,7 +26,7 @@ public class CacheService {
      * "cacheNames" param is naming cache and must be present othervice we'll get an exception
      */
 
-    @Cacheable("mySimpleCahce")
+    @Cacheable("mySimpleCache")
     public String getData() {
         return dao.getData();
     }
