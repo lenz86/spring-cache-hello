@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class CacheController {
 
 
-    @Autowired
+
     private CacheService cacheService;
 
+    @Autowired
     public CacheController(CacheService cacheService) {
         this.cacheService = cacheService;
     }
